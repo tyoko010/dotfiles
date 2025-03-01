@@ -16,6 +16,7 @@ function create_link() {
 
 create_link $DOTFILES_DIR/plugins.toml ~/.config/sheldon/plugins.toml
 create_link $DOTFILES_DIR/zshrc ~/.zshrc
+
 if [ -f /etc/wsl.conf ]; then
   create_link $DOTFILES_DIR/zshrc.wsl ~/.zshrc.wsl
 fi

@@ -12,15 +12,13 @@ git clone https://github.com/tyoko010/dotfiles.git
 
 ## TODO
 * Sync other files
-* Prepare an install script
 
 ## Tools installation
 
 ### macOS
 
 ```
-brew install sheldon
-brew install fzf
+brew install sheldon fzf
 ```
 
 ### Windows WSL (ubuntu 22.04)

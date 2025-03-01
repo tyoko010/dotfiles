@@ -22,7 +22,7 @@ shell = "zsh"
 github = "romkatv/zsh-defer"
 
 [templates]
-defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
 
 [plugins.fzf]
 github = "junegunn/fzf"
