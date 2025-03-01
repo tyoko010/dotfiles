@@ -18,7 +18,10 @@ git clone https://github.com/tyoko010/dotfiles.git
 
 ### macOS
 
-Use brew.
+```
+brew install sheldon
+brew install fzf
+```
 
 ### Windows WSL (ubuntu 22.04)
 
@@ -33,7 +36,7 @@ cargo install sheldon
 #### fzf
 ```
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+#~/.fzf/install
 ```
 
 #### for zsh highlighting

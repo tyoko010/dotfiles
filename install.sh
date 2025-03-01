@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-DOTFILES_DIR=~/dotfiles
+DOTFILES_DIR=$(cd $(dirname $0) && pwd)
 
 function create_link() {
   local origin=$1
@@ -16,4 +16,6 @@ function create_link() {
 
 create_link $DOTFILES_DIR/plugins.toml ~/.config/sheldon/plugins.toml
 create_link $DOTFILES_DIR/zshrc ~/.zshrc
-create_link $DOTFILES_DIR/zshrc.wsl ~/.zshrc.wsl
+if [ -f /etc/wsl.conf ]; then
+  create_link $DOTFILES_DIR/zshrc.wsl ~/.zshrc.wsl
+fi
