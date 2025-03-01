@@ -17,6 +17,30 @@ function create_link() {
 create_link $DOTFILES_DIR/plugins.toml ~/.config/sheldon/plugins.toml
 create_link $DOTFILES_DIR/zshrc ~/.zshrc
 
-if [ -f /etc/wsl.conf ]; then
-  create_link $DOTFILES_DIR/zshrc.wsl ~/.zshrc.wsl
+BREW_PACKAGES=(
+  fzf
+  sheldon
+  ripgrep
+  gh
+  yq
+  colima
+  docker
+  docker-compose
+)
+
+CASK_APPS=(
+  iterm2
+)
+
+if ! command -v brew &> /dev/null; then
+  echo "Homebrew is not installed. Please install Homebrew first."
+  exit 1
 fi
+
+brew update
+
+echo "Installing packages..."
+brew install "${BREW_PACKAGES[@]}"
+
+echo "Installing cask apps..."
+brew install --cask "${CASK_APPS[@]}"

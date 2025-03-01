@@ -1,9 +1,0 @@
-# wsl problem: https://github.com/zsh-users/zsh-syntax-highlighting/issues/790
-# add appendWindowsPath=false to /etc/wsl.conf
-ZSH_HIGHLIGHT_DIRS_BLACKLIST+=(/mnt)
-
-# no beep on terminal
-setopt no_beep
-
-# fzf installed in the home directory
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
