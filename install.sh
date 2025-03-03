@@ -4,14 +4,19 @@ set -e
 DOTFILES_DIR=$(cd $(dirname $0) && pwd)
 
 BREW_PACKAGES=(
+  # shell
   fzf
   sheldon
   ripgrep
-  gh
   yq
+  # virtualization
   colima
   docker
   docker-compose
+  # development
+  gh
+  nvm
+  pnpm
 )
 
 CASK_APPS=(
