@@ -24,6 +24,11 @@ github = "romkatv/zsh-defer"
 [templates]
 defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
 
+# local plugins
+[plugins.brew]
+local = "~/.dotfiles/zsh"
+use = ["{{ name }}.zsh"]
+
 [plugins.history]
 local = "~/.dotfiles/zsh"
 use = ["{{ name }}.zsh"]
@@ -33,7 +38,7 @@ local = "~/.dotfiles/zsh"
 use = ["{{ name }}.zsh"]
 apply = ["defer"]
 
-
+# remote plugins
 [plugins.fzf]
 github = "junegunn/fzf"
 use = ["shell/completion.zsh", "shell/key-bindings.zsh"]
