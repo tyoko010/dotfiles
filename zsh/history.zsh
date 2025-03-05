@@ -1,8 +1,8 @@
 # history settings
-HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
+HISTFILE="${ZDOTDIR:-$HOME}/.zsh_history"
 HISTORY_IGNORE="(cd|pwd|ls)"
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 
 # ref: https://qiita.com/sho-t/items/d553dd694900cae0966d
 setopt extended_history

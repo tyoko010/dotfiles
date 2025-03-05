@@ -17,6 +17,7 @@ BREW_PACKAGES=(
   gh
   nvm
   pnpm
+  uv
 )
 
 CASK_APPS=(
@@ -43,15 +44,16 @@ function create_link() {
   local origin=$1
   local link=$2
   if [ -e $link ]; then
-    echo "Already exists: $link"
+    echo "Already exists: ${link}"
   else
     ln -s $origin $link
-    echo "Created symbolic link: $link"
+    echo "Created symbolic link: ${link}"
   fi
 }
 
 install_brew_packages
-create_link $DOTFILES_DIR/plugins.toml ~/.config/sheldon/plugins.toml
-create_link $DOTFILES_DIR/zshrc ~/.zshrc
+mkdir -p ~/.config/sheldon
+create_link "${DOTFILES_DIR}/plugins.toml" ~/.config/sheldon/plugins.toml
+create_link "${DOTFILES_DIR}/zshrc" ~/.zshrc
 
 
