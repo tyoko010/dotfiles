@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
 DOTFILES_DIR=$(cd $(dirname $0) && pwd)
 
@@ -8,6 +8,7 @@ BREW_PACKAGES=(
   fzf
   sheldon
   ripgrep
+  jq
   yq
   # virtualization
   colima
@@ -15,8 +16,11 @@ BREW_PACKAGES=(
   docker-compose
   # development
   gh
+  git
+  # node
   nvm
   pnpm
+  # python
   uv
 )
 
@@ -38,6 +42,8 @@ function install_brew_packages() {
 
   echo "Installing cask apps..."
   brew install --cask "${CASK_APPS[@]}"
+
+  brew cleanup
 }
 
 function create_link() {
@@ -51,7 +57,13 @@ function create_link() {
   fi
 }
 
+# Install Homebrew packages
 install_brew_packages
+
+# Install Rust
+"${DOTFILES_DIR}/bin/bootstrap-rust.sh"
+
+# Create symbolic links for dotfiles
 mkdir -p ~/.config/sheldon
 create_link "${DOTFILES_DIR}/plugins.toml" ~/.config/sheldon/plugins.toml
 create_link "${DOTFILES_DIR}/zshrc" ~/.zshrc

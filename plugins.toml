@@ -38,6 +38,11 @@ local = "~/.dotfiles/zsh"
 use = ["{{ name }}.zsh"]
 apply = ["defer"]
 
+[plugins.rust]
+local = "~/.dotfiles/zsh"
+use = ["{{ name }}.zsh"]
+apply = ["defer"]
+
 # remote plugins
 [plugins.fzf]
 github = "junegunn/fzf"
