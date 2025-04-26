@@ -29,19 +29,13 @@ defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file 
 local = "~/.dotfiles/zsh"
 use = ["{{ name }}.zsh"]
 
-[plugins.history]
+[plugins.local-defer]
 local = "~/.dotfiles/zsh"
-use = ["{{ name }}.zsh"]
-
-[plugins.nvm]
-local = "~/.dotfiles/zsh"
-use = ["{{ name }}.zsh"]
-apply = ["defer"]
-
-[plugins.rust]
-local = "~/.dotfiles/zsh"
-use = ["{{ name }}.zsh"]
-apply = ["defer"]
+use = [
+    "history.zsh",
+    "nvm.zsh",
+    "rust.zsh"
+]
 
 # remote plugins
 [plugins.fzf]
