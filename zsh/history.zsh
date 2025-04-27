@@ -1,6 +1,6 @@
 # history settings
 HISTFILE="${ZDOTDIR:-$HOME}/.zsh_history"
-HISTORY_IGNORE="(cd|pwd|ls)"
+HISTORY_IGNORE="(cd|pwd|ls|cat|less|clear|history|rm|exit|logout|jobs)"
 HISTSIZE=100000
 SAVEHIST=100000
 
