@@ -25,17 +25,20 @@ github = "romkatv/zsh-defer"
 defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
 
 # local plugins
-[plugins.brew]
+[plugins.local]
 local = "~/.dotfiles/zsh"
-use = ["{{ name }}.zsh"]
+use = [
+    "brew.zsh",
+    "history.zsh",
+    "rust.zsh"
+]
 
 [plugins.local-defer]
 local = "~/.dotfiles/zsh"
 use = [
-    "history.zsh",
-    "nvm.zsh",
-    "rust.zsh"
+    "nvm.zsh"
 ]
+apply = ["defer"]
 
 # remote plugins
 [plugins.fzf]
