@@ -30,15 +30,9 @@ local = "~/.dotfiles/zsh"
 use = [
     "brew.zsh",
     "history.zsh",
-    "rust.zsh"
+    "rust.zsh",
+    "volta.zsh"
 ]
-
-[plugins.local-defer]
-local = "~/.dotfiles/zsh"
-use = [
-    "nvm.zsh"
-]
-apply = ["defer"]
 
 # remote plugins
 [plugins.fzf]

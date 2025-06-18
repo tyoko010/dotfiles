@@ -18,8 +18,7 @@ BREW_PACKAGES=(
   gh
   git
   # node
-  nvm
-  pnpm
+  volta
   # python
   uv
 )
