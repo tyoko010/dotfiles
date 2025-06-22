@@ -17,6 +17,7 @@ BREW_PACKAGES=(
   # development
   gh
   git
+  just
   # node
   volta
   # python
