@@ -10,6 +10,7 @@ BREW_PACKAGES=(
   ripgrep
   jq
   yq
+  tree
   # virtualization
   colima
   docker
@@ -22,6 +23,8 @@ BREW_PACKAGES=(
   volta
   # python
   uv
+  # golang
+  go
 )
 
 CASK_APPS=(
